@@ -50,6 +50,10 @@ jobs:
     - name: git commit -m 'deploy'
       run: |
         git commit -m 'deploy'
+    - name: 拉取代码
+      run: |
+        git pull origin gh-pages
     - name: 推送代码 git push -f origin gh-pages
       run: |
+
         git push -f origin gh-pages
