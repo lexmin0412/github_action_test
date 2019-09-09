@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js ${{ strategy.matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: ${{ strategy.matrix.node-version }}
     - name: 开始打包 执行npm install
       run: |
         npm install
@@ -52,4 +52,4 @@ jobs:
         ls
     - name: 推送代码 git push -f origin gh-pages
       run: |
-        git push -f origin master:gh-pages
+        git push -f git@github.com:cathe-zhang/github_action_test.git master:gh-pages
