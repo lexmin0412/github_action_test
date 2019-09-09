@@ -25,3 +25,6 @@ jobs:
     - name: 执行npm run build:h5
       run: |
         npm run build:h5
+    - name: 运行git命令
+      run: |
+        git --help
