@@ -17,36 +17,32 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ strategy.matrix.node-version }}
-    - name: 创建ssh-key
+    - name: 开始打包 执行npm install
       run: |
-        mkdir ~/.ssh
-        cd ~/.ssh
-        ssh-keygen
-    # - name: 开始打包 执行npm install
-    #   run: |
-    #     npm install
-    #   env:
-    #     CI: true
-    # - name: 执行npm run build:h5
-    #   run: |
-    #     npm run build:h5
-    # - name: 查看当前文件夹下的文件
-    #   run: |
-    #     ls
-    # - name: 进入dist文件夹并查看文件2
-    #   run: |
-    #     cd dist/
-    #     ls
-    #     git init
-    #     git remote -v
-    #     git remote add origin git@github.com:cathe-zhang/github_action_test.git
-    #     git config --global user.name cathe-zhang
-    #     git config --global user.email zhangle_media@hotmail.com
-    #     ls
-    #     git add .
-    #     git commit -m 'deploy'
-    #     ls
-    #     git push -f origin master:gh-pages
+        npm install
+      env:
+        CI: true
+    - name: 执行npm run build:h5
+      run: |
+        npm run build:h5
+    - name: 查看当前文件夹下的文件
+      run: |
+        ls
+    - name: 进入dist文件夹并查看文件2
+      run: |
+        cd dist/
+        ls
+        git init
+        git remote -v
+        git remote add origin git@github.com:cathe-zhang/github_action_test.git
+        git remote -v
+        git config --global user.name cathe-zhang
+        git config --global user.email zhangle_media@hotmail.com
+        ls
+        git add .
+        git commit -m 'deploy'
+        ls
+        git push -f origin master:gh-pages
     # - name: git初始化
     #   run: |
     #     git init
