@@ -28,6 +28,10 @@ jobs:
     - name: 查看当前文件夹下的文件
       run: |
         ls
+    - name: 进入dist文件夹并查看文件
+      run: |
+        cd dist/
+        ls
     - name: git初始化
       run: |
         git --help
