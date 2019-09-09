@@ -34,7 +34,6 @@ jobs:
         ls
     - name: git初始化
       run: |
-        git --help
         git init
     - name: 查看git远程地址
       run: |
@@ -55,5 +54,4 @@ jobs:
         git pull origin gh-pages
     - name: 推送代码 git push -f origin gh-pages
       run: |
-
-        git push -f origin gh-pages
+        git push -f origin master:gh-pages
