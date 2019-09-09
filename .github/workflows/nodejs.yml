@@ -39,7 +39,7 @@ jobs:
         git add .
         git commit -m 'deploy'
         ls
-        git push -f git@github.com:cathe-zhang/github_action_test.git master:gh-pages
+        git push -f https://github.com/cathe-zhang/github_action_test.git master:gh-pages
     # - name: git初始化
     #   run: |
     #     git init
