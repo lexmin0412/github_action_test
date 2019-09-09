@@ -39,7 +39,7 @@ jobs:
     - name: 查看git远程地址
       run: |
         git remote -v
-        git remote add origin https://github.com/cathe-zhang/github_action_test.git
+        # git remote add origin https://github.com/cathe-zhang/github_action_test.git
     - name: 设置git用户信息
       run: |
         git config --global user.name cathe-zhang
