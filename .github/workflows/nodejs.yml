@@ -25,6 +25,14 @@ jobs:
     - name: 执行npm run build:h5
       run: |
         npm run build:h5
+    - name: 查看当前文件夹下的文件
+      run: |
+        ls
     - name: 运行git命令
       run: |
         git --help
+        git init
+        git remote add origin https://github.com/cathe-zhang/github_action_test.git
+        git add .
+        git commit -m 'deploy'
+        git push -u origin dev
