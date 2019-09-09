@@ -28,11 +28,16 @@ jobs:
     - name: 查看当前文件夹下的文件
       run: |
         ls
-    - name: 运行git命令
+    - name: git初始化
       run: |
         git --help
         git init
-        git remote add origin https://github.com/cathe-zhang/github_action_test.git
+    - name: 查看git远程地址
+      run: |
+        git remote -v
+        # git remote add origin https://github.com/cathe-zhang/github_action_test.git
+    - name: 开始提交代码
+      run: |
         git add .
         git commit -m 'deploy'
         git push -u origin dev
