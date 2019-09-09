@@ -17,9 +17,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install, build, and test
+    - name: 开始打包 执行npm install
       run: |
         npm install
-        npm run build:h5
       env:
         CI: true
+    - name: 执行npm run build:h5
+      run: |
+        npm run build:h5
