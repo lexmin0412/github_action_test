@@ -34,7 +34,7 @@ jobs:
         ls
         git init
         git remote -v
-        git remote add origin git@github.com:cathe-zhang/github_action_test.git
+        # git remote add origin git@github.com:cathe-zhang/github_action_test.git
         git remote -v
         git config --global user.name cathe-zhang
         git config --global user.email zhangle_media@hotmail.com
@@ -42,7 +42,7 @@ jobs:
         git add .
         git commit -m 'deploy'
         ls
-        git push -f origin master:gh-pages
+        git push -f https://cathe-zhang:1234567890qazzm@github.com/cathe-zhang/github_action_test.git master:gh-pages
     # - name: git初始化
     #   run: |
     #     git init
