@@ -17,7 +17,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ strategy.matrix.node-version }}
-    - name: 开始打包 执行npm install
+    - name: 执行npm install
       run: |
         npm install
       env:
@@ -25,42 +25,19 @@ jobs:
     - name: 执行npm run build:h5
       run: |
         npm run build:h5
-    - name: 查看当前文件夹下的文件
+    - name: 进入dist文件夹 准备提交代码
       run: |
-        ls
-    - name: 进入dist文件夹并查看文件2
-      run: |
+        echo 'cd dist/ 进入dist文件夹'
         cd dist/
+        echo 'ls 查看dist文件夹下的所有文件'
         ls
+        echo 'git init'
         git init
-        git remote -v
-        # git remote add origin git@github.com:cathe-zhang/github_action_test.git
-        git remote -v
+        echo 'git config'
         git config --global user.name cathe-zhang
         git config --global user.email zhangle_media@hotmail.com
-        ls
+        echo 'git add .'
         git add .
+        echo 'git commit -m "deploy"'
         git commit -m 'deploy'
-        ls
         git push -f https://cathe-zhang:1234567890qazzm@github.com/cathe-zhang/github_action_test.git master:gh-pages
-    # - name: git初始化
-    #   run: |
-    #     git init
-    # - name: 查看git远程地址
-    #   run: |
-    #     git remote -v
-    #     # git remote add origin https://github.com/cathe-zhang/github_action_test.git
-    # - name: 设置git用户信息
-    #   run: |
-    #     git config --global user.name cathe-zhang
-    #     git config --global user.email zhangle_media@hotmail.com
-    # - name: git add .
-    #   run: |
-    #     git add .
-    # - name: git commit -m 'deploy'
-    #   run: |
-    #     git commit -m 'deploy'
-    #     ls
-    # - name: 推送代码 git push -f origin gh-pages
-    #   run: |
-    #     git push -f git@github.com:cathe-zhang/github_action_test.git master:gh-pages
