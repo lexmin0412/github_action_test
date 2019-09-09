@@ -6,6 +6,12 @@ module.exports = {
   },
   weapp: {},
   h5: {
+    publicPath: '/github_action_test/',
+		router: {
+			basename: '/github_action_test', // 关注点2
+			mode: 'browser', // 或者是 'hash'
+			customRoutes: {}
+		}
     /**
      * 如果h5端编译后体积过大，可以使用webpack-bundle-analyzer插件对打包体积进行分析。
      * 参考代码如下：
