@@ -44,8 +44,12 @@ jobs:
       run: |
         git config --global user.name cathe-zhang
         git config --global user.email zhangle_media@hotmail.com
-    - name: 开始提交代码
+    - name: git add .
       run: |
         git add .
+    - name: git commit -m 'deploy'
+      run: |
         git commit -m 'deploy'
-        git push -u origin dev
+    - name: 推送代码 git push -f origin gh-pages
+      run: |
+        git push -f origin gh-pages
