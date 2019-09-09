@@ -32,24 +32,32 @@ jobs:
       run: |
         cd dist/
         ls
-    - name: git初始化
-      run: |
         git init
-    - name: 查看git远程地址
-      run: |
         git remote -v
-        # git remote add origin https://github.com/cathe-zhang/github_action_test.git
-    - name: 设置git用户信息
-      run: |
         git config --global user.name cathe-zhang
         git config --global user.email zhangle_media@hotmail.com
-    - name: git add .
-      run: |
         git add .
-    - name: git commit -m 'deploy'
-      run: |
         git commit -m 'deploy'
         ls
-    - name: 推送代码 git push -f origin gh-pages
-      run: |
         git push -f git@github.com:cathe-zhang/github_action_test.git master:gh-pages
+    # - name: git初始化
+    #   run: |
+    #     git init
+    # - name: 查看git远程地址
+    #   run: |
+    #     git remote -v
+    #     # git remote add origin https://github.com/cathe-zhang/github_action_test.git
+    # - name: 设置git用户信息
+    #   run: |
+    #     git config --global user.name cathe-zhang
+    #     git config --global user.email zhangle_media@hotmail.com
+    # - name: git add .
+    #   run: |
+    #     git add .
+    # - name: git commit -m 'deploy'
+    #   run: |
+    #     git commit -m 'deploy'
+    #     ls
+    # - name: 推送代码 git push -f origin gh-pages
+    #   run: |
+    #     git push -f git@github.com:cathe-zhang/github_action_test.git master:gh-pages
