@@ -6,6 +6,7 @@ on:
     # 指定触发指定事件的分支
     branches:
       - dev
+      - master
 jobs:
   build:
 
@@ -20,7 +21,7 @@ jobs:
     - name: Use Node.js ${{ strategy.matrix.node-version }}
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ $strategy.matrix.node-version }}
+        node-version: ${{ strategy.matrix.node-version }}
     - name: 执行npm install
       run: |
         npm install
@@ -31,8 +32,8 @@ jobs:
         npm run build:h5
     - name: 进入dist文件夹 准备提交代码
       run: |
-        echo ${{ $strategy.matrix.node-version }}
-        echo "${{ $strategy.matrix.node-version }}"
+        echo ${{ strategy.matrix.node-version }}
+        echo "${{ strategy.matrix.node-version }}"
         echo 'cd dist/ 进入dist文件夹'
         cd dist/
         echo 'ls 查看dist文件夹下的所有文件'
