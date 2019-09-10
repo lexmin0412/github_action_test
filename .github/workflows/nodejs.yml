@@ -1,10 +1,11 @@
 name: Node CI
 
 # 指定触发action的事件
-on: [push]
-  # 指定触发指定事件的分支
-  branches:
-    - dev
+on:
+  push:
+    # 指定触发指定事件的分支
+    branches:
+      - dev
 jobs:
   build:
 
