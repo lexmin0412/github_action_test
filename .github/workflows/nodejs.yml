@@ -4,7 +4,7 @@ name: Node CI
 on: [push]
   # 指定触发指定事件的分支
   branches:
-    - develop
+    - dev
 jobs:
   build:
 
