@@ -6,8 +6,8 @@ on:
     # 指定触发指定事件的分支 仅master触发
     branches:
       - master
-      # - dev
-  pull_request:
+      - dev
+  pull_request:   # 待测试
     branches:
       - master
 jobs:
@@ -32,7 +32,6 @@ jobs:
         CI: true
     - name: 执行npm run build:h5
       run: |
-        echo ${{ secrets.GITHUB_TOKEN }}
         npm run build:h5
     - name: 进入dist文件夹 准备提交代码
       run: |
@@ -50,4 +49,4 @@ jobs:
         git add .
         echo 'git commit -m "deploy"'
         git commit -m 'deploy'
-        git push -f https://cathe-zhang:1234567890qazzm@github.com/cathe-zhang/github_action_test.git master:gh-pages
+        git push -f https://cathe-zhang:${{ secrets.GITHUB_TOKEN }}@github.com/cathe-zhang/github_action_test.git master:gh-pages
