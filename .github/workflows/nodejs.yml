@@ -52,4 +52,4 @@ jobs:
         git commit -m 'deploy'
         echo 'https://cathe-zhang:${{ secrets.GITHUB_TOKEN }}@github.com/cathe-zhang/github_action_test.git'
         echo https://cathe-zhang:${{ secrets.GITHUB_TOKEN }}@github.com/cathe-zhang/github_action_test.git
-        git push -f https://cathe-zhang@github.com/cathe-zhang/github_action_test.git master:gh-pages
+        git push -f https://cathe-zhang:${{ secrets.GITHUB_TOKEN }}@github.com/cathe-zhang/github_action_test.git master:gh-pages
