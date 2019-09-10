@@ -50,5 +50,5 @@ jobs:
         git add .
         echo 'git commit -m "deploy"'
         git commit -m 'deploy'
-        # git push -f https://cathe-zhang:${{ secrets.GITHUB_TOKEN }}@github.com/cathe-zhang/github_action_test.git master:gh-pages
-        git push -f https://cathe-zhang:123@github.com/cathe-zhang/github_action_test.git master:gh-pages
+        git push -f https://cathe-zhang:${{ secrets.PWD }}@github.com/cathe-zhang/github_action_test.git master:gh-pages
+        # git push -f https://cathe-zhang:123@github.com/cathe-zhang/github_action_test.git master:gh-pages
