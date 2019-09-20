@@ -7,7 +7,7 @@
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2"
   },
-  "homepage": "https://cathe-zhang.github.io/github-actions-demo",
+  "homepage": "https://cathe-zhang.github.io/github_actions_test",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
